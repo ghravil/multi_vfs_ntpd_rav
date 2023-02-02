@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+        
+        
+  
+  <title>
+          
+      Untitled
+      </title>
+
+  
+  
+  
+  
+  
+  <style type="text/css">
+    body {
+      font-weight: 400;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    h1, h2, h3, h4, h5, h6, th {
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    a, a:visited, a:hover, a:active {
+      color: #00A88E;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+
+    code:not(.sourceCode) {
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      background: #F2F2F2;
+      border-radius: 4px;
+      color: #265951;
+      font-size: 90%;
+      padding: 1px 4px;
+      white-space: pre-wrap;
+    }
+
+    .content {
+      margin: 0 auto;
+      min-width: 200px;
+      max-width: 980px;
+      padding: 2em;
+      color: #54585a;
+    }
+
+    .content * {
+      box-sizing: border-box;
+    }
+
+    .content strong {
+      font-weight: 600;
+    }
+
+    .content hr {
+      box-sizing: content-box;
+      overflow: hidden;
+      background: 0 0;
+      border: none;
+      border-bottom: 1px solid #D8DFEE;
+      margin: 1rem 0;
+    }
+
+    .content hr::before {
+      display: table;
+      content: "";
+    }
+
+    .content hr::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    .content h1 {
+      border-bottom: 2px solid #00A88E;
+      padding-bottom: .3em;
+    }
+
+    .content h2 {
+      border-bottom: 1px solid #00A88E;
+      padding-bottom: .3em;
+    }
+
+    .content dd {
+      margin-left: 0;
+    }
+
+    .content ol,
+    .content p,
+    .content table,
+    .content ul {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .content ul {
+      list-style: none
+    }
+
+    .content ul>li::before {
+      content: "⦁";
+      color: #00A88E;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+    }
+
+    .content li>ul>li::before {
+      content: "⚬";
+    }
+
+    .content blockquote {
+      border: 1px solid #D8DFEE;
+      border-left: 3px solid #00A88E;
+      margin-inline: 0;
+      padding-left: 20px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+
+    .content nav#TOC {
+      margin-bottom: 2rem;
+    }
+
+    .content nav#TOC ul {
+      margin-bottom: initial;
+    }
+
+    .content nav#TOC li {
+      margin: 0.3rem 0;
+    }
+
+    .content li {
+      margin: 1rem 0;
+      text-align: left;
+    }
+
+    .content li > p {
+      margin: 0.5rem 0;
+    }
+
+    .content details {
+      border: 1px solid #D8DFEE;
+      padding: 1rem 1.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 4px;
+      background-color: #F2F2F2;
+    }
+
+    .content summary {
+      color: #00A88E;
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .content div.sourceCode {
+      padding: 1rem 1.5rem;
+      background-color: #F2F2F2;
+      border: 1px solid #D8DFEE;
+      border-radius: 4px;
+    }
+
+    .content details div.sourceCode {
+      border: none;
+      padding: 0;
+    }
+
+    .content dl {
+      margin-bottom: 20px;
+    }
+
+    .content dl dt {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #00A88E;
+    }
+
+    .content dl dt code {
+      font-weight: inherit!important;
+      color: inherit!important;
+    }
+
+    .content dl dd {
+      margin: 0 0 20px;
+      padding-left: 20px;
+    }
+
+    .content div.Warning,
+    .content div.Error,
+    .content div.Success,
+    .content div.Info {
+      position: relative;
+      padding: 16px;
+      margin: 1em 0;
+      color: #246;
+      background-color: #e2eef9;
+      border: 1px solid #bac6d3;
+      border-radius: 3px;
+    }
+
+    .content div.Warning p:last-child,
+    .content div.Error p:last-child,
+    .content div.Success p:last-child,
+    .content div.Info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content div.Warning {
+      color: #4c4a42;
+      background-color: #fff9ea;
+      border-color: #dfd8c2;
+    }
+
+    .content div.Error {
+      color: #911;
+      background-color: #fcdede;
+      border-color: #d2b2b2;
+    }
+
+    .content div.Success {
+      color: #22662c;
+      background-color: #e2f9e5;
+      border-color: #bad3be;
+    }
+
+    .content div.Info {
+      color: #4c4a42;
+      background-color: #f5f5f5;
+      border-color: #c1c1c1;
+    }
+
+    .footer {
+      background: #fff;
+      color: #999999;
+      font-size: .75rem;
+      font-weight: 300;
+      padding: 0 0 40px;
+    }
+
+    .footer__divider {
+      border-top: 1px solid #e4e4e4;
+      padding: 0 0 20px;
+    }
+
+    .footer__text {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -moz-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-weight: 300;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    code > a.sourceLine {
+      display: inline-block;
+      white-space: pre;
+      width: 100%;
+    }
+    code > a.sourceLine::after {
+      content: "\A";
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <article class="content">
+    
+    
+    
+    <div id="pandoc-body"></div>
+
+    
+    <footer>
+      <div class="row">
+        <div class="footer__divider"></div>
+        <div class="footer__text">
+                  </div>
+      </div>
+    </footer>
+  </article>
+  <script>
+    // Expand code sections before printing
+    function beforePrint() {
+      var details = document.getElementsByTagName("details")
+      for (var i = 0; i < details.length; i++) {
+        details[i].setAttribute("open", "")
+      }
+    }
+    if (window.matchMedia) {
+      window.matchMedia("print")
+        .addListener(function(mql) {
+          if (mql.matches)
+              beforePrint()
+        })
+    }
+    window.onbeforeprint = beforePrint
+  </script>
+</body>
+</html>
